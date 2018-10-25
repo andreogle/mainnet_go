@@ -1,0 +1,10 @@
+# Dependencies
+node_modules/
+vendor/
+tmp/
+
+# Log Files
+*.log
+
+# Misc
+.DS_Store
