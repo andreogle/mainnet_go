@@ -12,11 +12,10 @@ var netClient = http.Client{
 
 func HttpGet(url string) (*http.Response, error) {
 	res, err := netClient.Get(url)
-	defer res.Body.Close()
-
 	if err != nil {
 		fmt.Printf("Failed to GET %v", url)
 	}
+	defer res.Body.Close()
 
 	return res, err
 }

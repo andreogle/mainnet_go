@@ -1,7 +1,7 @@
 package main
 
 import (
-	"mainnet/controllers"
+	"mainnet_go/controllers"
 
 	"github.com/gin-gonic/gin"
 )

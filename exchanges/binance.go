@@ -1,22 +1,27 @@
 package exchanges
 
 type BinancePrice struct {
-	symbol             string `json:"symbol"`
-	priceChange        string `json:"priceChange"`
-	priceChangePercent string `json:"priceChangePercent"`
-	weightedAvgPrice   string `json:"weightedAvgPrice"`
-	prevClosePrice     string `json:"prevClosePrice"`
-	lastPrice          string `json:"lastPrice"`
-	lastQty            string `json:"lastQty"`
-	bidPrice           string `json:"bidPrice"`
-	askPrice           string `json:"askPrice"`
-	openPrice          string `json:"openPrice"`
-	highPrice          string `json:"highPrice"`
-	lowPrice           string `json:"lowPrice"`
-	volume             string `json:"volume"`
-	quoteVolume        string `json:"quoteVolume"`
-	openTime           uint   `json:"openTime"`
-	closeTime          uint   `json:"openTime"`
-	openTime           uint   `json:"openTime"`
-	openTime           uint   `json:"openTime"`
+	Symbol             string `json:"symbol"`
+	PriceChange        string `json:"priceChange"`
+	PriceChangePercent string `json:"priceChangePercent"`
+	WeightedAvgPrice   string `json:"weightedAvgPrice"`
+	PrevClosePrice     string `json:"prevClosePrice"`
+	LastPrice          string `json:"lastPrice"`
+	LastQty            string `json:"lastQty"`
+	BidPrice           string `json:"bidPrice"`
+	AskPrice           string `json:"askPrice"`
+	OpenPrice          string `json:"openPrice"`
+	HighPrice          string `json:"highPrice"`
+	LowPrice           string `json:"lowPrice"`
+	Volume             string `json:"volume"`
+	QuoteVolume        string `json:"quoteVolume"`
+	OpenTime           uint   `json:"openTime"`
+	CloseTime          uint   `json:"closeTime"`
+	FirstID            uint   `json:"firstId"`
+	LastID             uint   `json:"lastId"`
+	Count              uint   `json:"count"`
+}
+
+type BinancePrices struct {
+	Collection []BinancePrice
 }

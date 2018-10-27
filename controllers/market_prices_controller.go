@@ -2,17 +2,18 @@ package controllers
 
 import (
 	"fmt"
-	"mainnet/utils"
+
+	"mainnet_go/utils"
 
 	"github.com/gin-gonic/gin"
 )
 
 type params struct {
-	id string `json:"id"`
+	ID string `json:"id"`
 }
 
-type marketPricesData struct {
-	ticker string `json:"ticker"`
+type MarketPrice struct {
+	Ticker string `json:"ticker"`
 }
 
 func Latest(c *gin.Context) {
