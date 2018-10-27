@@ -1,5 +1,10 @@
 package exchanges
 
+import (
+	"fmt"
+	"mainnet_go/utils"
+)
+
 type BinancePrice struct {
 	Symbol             string `json:"symbol"`
 	PriceChange        string `json:"priceChange"`
@@ -24,4 +29,18 @@ type BinancePrice struct {
 
 type BinancePrices struct {
 	Collection []BinancePrice
+}
+
+const baseURL string = "https://api.binance.com"
+
+// FetchMarketTicker Fetches the latest price from Binance for a given symbol
+func FetchMarketTicker(ticker string) (BinancePrice, error) {
+	fmt.Printf("[Binance] Fetching latest prices for %s", ticker)
+
+	url := fmt.Sprintf("%s/api/v1/ticker/24hr?symbol=%s", baseURL, ticker)
+
+	price := BinancePrice{}
+	utils.HttpGet(url, &price)
+
+	return price, nil
 }

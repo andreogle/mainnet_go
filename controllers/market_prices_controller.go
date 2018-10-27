@@ -35,14 +35,7 @@ type BinancePrice struct {
 }
 
 func Latest(c *gin.Context) {
-	fmt.Printf("[Binance] Fetching latest prices for LINK_BTC")
-
-	price := BinancePrice{}
-	utils.HttpGet("https://api.binance.com/api/v1/ticker/24hr?symbol=LINKBTC", &price)
-
-	fmt.Println(price)
-
-	fmt.Printf("[Binance] Successfully fetched latest %v price %v", "LINK_BTC", price)
+	price, err :=
 
 	c.JSON(200, gin.H{
 		"message": price,
